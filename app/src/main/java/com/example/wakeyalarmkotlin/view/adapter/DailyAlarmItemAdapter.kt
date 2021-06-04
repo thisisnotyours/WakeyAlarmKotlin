@@ -26,6 +26,7 @@ class DailyAlarmItemAdapter(val context: Context, items: ArrayList<DailyAlarmIte
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val vh = holder as VH
         val item: DailyAlarmItem = items[position]
+        vh.titleText.setText(item.titleText)
         vh.timeText.setText(item.time)
         vh.timeTypeText.setText(item.timeType)
         //switch btn to boolean?
@@ -41,11 +42,13 @@ class DailyAlarmItemAdapter(val context: Context, items: ArrayList<DailyAlarmIte
 
 
     inner class VH(itemview: View) : RecyclerView.ViewHolder(itemview){
+        var titleText: TextView
         var timeText: TextView
         var timeTypeText: TextView
         var switchBtn: Switch
 
         init {
+            titleText = itemview.findViewById(R.id.title_text)
             timeText = itemview.findViewById(R.id.time_text)
             timeTypeText = itemview.findViewById(R.id.time_type_text)
             switchBtn = itemview.findViewById(R.id.switch_btn)
