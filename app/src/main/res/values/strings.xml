@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">WakeyAlarmKotlin</string>
+    <string name="alarm_on">Alarm ON in 2 hrs from now</string>
+    <string name="alarm_off">Alarm OFF</string>
+    <string name="delete_alarm_dialog_title">Delete Alarm</string>
+    <string name="delete_alarm_dialog">Do you want to delete this alarm?</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+</resources>

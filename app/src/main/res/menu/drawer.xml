@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/info"
+        android:title="정보"/>
+
+    <item android:id="@+id/trasaction_info"
+        android:title="거래내역"/>
+
+    <item android:id="@+id/setting"
+        android:title="설정"/>
+
+    <item android:id="@+id/note_payment"
+        android:title="수기결제"/>
+
+    <item android:id="@+id/print_receipt"
+        android:title="영수증 출력"/>
+
+    <item android:id="@+id/cancel_payment"
+        android:title="결제취소"/>
+
+
+
+    <!--구분선같은 효과를 주고 싶다면 "sub menu" 를 만들면 됨-->
+    <!--<item android:title="Your Account">
+        <menu>
+            <item android:id="@+id/aa"
+                android:title="aa"/>
+            <item android:id="@+id/bb"
+                android:title="bb"/>
+        </menu>
+    </item>-->
+
+
+</menu>
