@@ -13,4 +13,6 @@
     <color name="background_dark">#1E2327</color>
     <color name="peach">#F4A993</color>
     <color name="red">#BA1B1B</color>
+
+    <color name="light_grey">#BBB8C1</color>
 </resources>

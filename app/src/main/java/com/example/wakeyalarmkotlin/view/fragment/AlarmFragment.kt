@@ -1,4 +1,4 @@
-package com.example.wakeyalarmkotlin.view.view
+package com.example.wakeyalarmkotlin.view.fragment
 
 import android.app.DatePickerDialog
 import android.content.Intent
@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
 import com.example.wakeyalarmkotlin.R
+import com.example.wakeyalarmkotlin.view.view.MainActivity
 import java.text.SimpleDateFormat
 import java.util.*
 

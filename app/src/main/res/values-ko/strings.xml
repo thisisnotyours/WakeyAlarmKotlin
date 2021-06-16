@@ -37,4 +37,6 @@
     <string name="fri">금</string>
     <string name="sat">토</string>
     <string name="sun">일</string>
+
+    <string name="app_off">앱 종료</string>
 </resources>

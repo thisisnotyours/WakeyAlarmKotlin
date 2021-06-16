@@ -36,4 +36,6 @@
     <string name="fri">F</string>
     <string name="sat">S</string>
     <string name="sun">S</string>
+
+    <string name="app_off">App Off</string>
 </resources>

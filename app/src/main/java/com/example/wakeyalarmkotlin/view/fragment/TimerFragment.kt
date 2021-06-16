@@ -1,4 +1,4 @@
-package com.example.wakeyalarmkotlin.view.view
+package com.example.wakeyalarmkotlin.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

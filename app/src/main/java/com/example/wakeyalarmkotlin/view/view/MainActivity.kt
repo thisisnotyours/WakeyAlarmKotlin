@@ -3,28 +3,28 @@ package com.example.wakeyalarmkotlin.view.view
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.drawerlayout.widget.DrawerLayout.DrawerListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wakeyalarmkotlin.R
 import com.example.wakeyalarmkotlin.view.adapter.DailyAlarmItemAdapter
 import com.example.wakeyalarmkotlin.view.model.DailyAlarmItem
-import com.google.android.material.navigation.NavigationView
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var drawerLayout: DrawerLayout
+    private lateinit var hamburgerBtn: ImageView
+    private lateinit var leftDrawer: View
+
     private lateinit var dailyAlarmRecycler: RecyclerView
     private lateinit var items: ArrayList<DailyAlarmItem>
     private lateinit var dailyAlarmAdapter: DailyAlarmItemAdapter
@@ -38,14 +38,108 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         context = this
 
+        //create Custom Navigation Drawer
+        setCustomNavigationDrawer()
+
+        //create Navigation Drawer
+       // setNavigationDrawer()
+
+        //create current date and time
+        setCurrentDateAndTime()
+
+        //create RecyclerView
+        setRecyclerView()
+
+
+/**
+        // create recyclerView -> need to make it dynamic
+        val items = arrayListOf<DailyAlarmItem>()
+        /*for (i in 0..2){
+            items.add(DailyAlarmItem("School", "07:30","AM" ))
+        }*/
+
+
+        val dailyAlarmRecycler = findViewById<RecyclerView>(R.id.recycler)
+        dailyAlarmRecycler.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = DailyAlarmItemAdapter(context, items)
+        }
+**/
+    }//onCreate
+
+
+    fun setCustomNavigationDrawer(){
+        leftDrawer = findViewById(R.id.left_drawer)
+        drawerLayout = findViewById(R.id.drawer)
+
+        hamburgerBtn = findViewById(R.id.hamburger_btn)
+        hamburgerBtn.setOnClickListener { drawerLayout.openDrawer(leftDrawer) }
+
+        val closeDrawerBtn = findViewById<ImageView>(R.id.close_drawer_btn)
+        closeDrawerBtn.setOnClickListener { drawerLayout.closeDrawers() }
+
+        val mListener: DrawerListener = object : DrawerListener {
+            override fun onDrawerSlide(drawerView: View, slideOffset: Float) {}
+            override fun onDrawerOpened(drawerView: View) {}
+            override fun onDrawerClosed(drawerView: View) {}
+            override fun onDrawerStateChanged(newState: Int) {}
+        }
+
+        drawerLayout.addDrawerListener(mListener)
+
+        //each menu of navigation drawer
+        val alarmMenu = findViewById<LinearLayout>(R.id.alarm_menu)
+        alarmMenu.setOnClickListener {
+            Toast.makeText(this, "알람 프래그먼트로 이동", Toast.LENGTH_SHORT).show()
+        }
+
+        val clockMenu = findViewById<LinearLayout>(R.id.clock_menu)
+        clockMenu.setOnClickListener {
+            Toast.makeText(this, "시계 프래그먼트로 이동", Toast.LENGTH_SHORT).show()
+        }
+
+        val timerMenu = findViewById<LinearLayout>(R.id.timer_menu)
+        timerMenu.setOnClickListener {
+            Toast.makeText(this, "타이머 프래그먼트로 이동", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+
+   /* fun setNavigationDrawer(){
+        val nav = findViewById<NavigationView>(R.id.nav)
+        val drawer = findViewById<DrawerLayout>(R.id.drawer)
+        val menuBtn = findViewById<ImageView>(R.id.menu_btn)
+        menuBtn.setOnClickListener{
+            if (!drawer.isDrawerOpen(Gravity.LEFT)){
+                drawer.openDrawer(Gravity.LEFT);
+            }
+        }
+        //onClick on NavigationView
+        //nav.setItemIconTintList(null);      //to color the icon
+        nav.setNavigationItemSelectedListener { menuItem ->
+            val id = menuItem.itemId
+            when (id) {
+                R.id.info -> Toast.makeText(this, "menu1", Toast.LENGTH_SHORT).show()
+                R.id.trasaction_info -> Toast.makeText(this, "menu2", Toast.LENGTH_SHORT).show()
+                R.id.setting -> Toast.makeText(this, "menu3", Toast.LENGTH_SHORT).show()
+                R.id.note_payment -> Toast.makeText(this, "menu4", Toast.LENGTH_SHORT).show()
+                R.id.print_receipt -> Toast.makeText(this, "menu5", Toast.LENGTH_SHORT).show()
+                R.id.cancel_payment -> Toast.makeText(this, "menu6", Toast.LENGTH_SHORT).show()
+            }
+            //switch 문 끝나고 drawer 닫기?
+            // drawerLayout.closeDrawer(nav);
+            false
+        } //nav
+    }*/
+
+
+    fun setCurrentDateAndTime(){
         val dateText = findViewById<TextView>(R.id.date_text)
         val dayType = findViewById<TextView>(R.id.day_type)
         val timeText = findViewById<TextView>(R.id.time_text)
         val timeTypeText = findViewById<TextView>(R.id.time_type)
-
 
         // current date & time
         val now = System.currentTimeMillis()
@@ -67,37 +161,11 @@ class MainActivity : AppCompatActivity() {
         timeText.text = strTime
         timeTypeText.text = strTimeType
         dayType.text = "(" + strDayType + ")"
+    }
 
 
-        val nav = findViewById<NavigationView>(R.id.nav)
-        val drawer = findViewById<DrawerLayout>(R.id.drawer)
 
-        val menuBtn = findViewById<ImageView>(R.id.menu_btn)
-        menuBtn.setOnClickListener{
-            if (!drawer.isDrawerOpen(Gravity.LEFT)){
-                drawer.openDrawer(Gravity.LEFT);
-            }
-        }
-
-
-        //onClick on NavigationView
-        //nav.setItemIconTintList(null);      //to color the icon
-        nav.setNavigationItemSelectedListener { menuItem ->
-            val id = menuItem.itemId
-            when (id) {
-                R.id.info -> Toast.makeText(this, "menu1", Toast.LENGTH_SHORT).show()
-                R.id.trasaction_info -> Toast.makeText(this, "menu2", Toast.LENGTH_SHORT).show()
-                R.id.setting -> Toast.makeText(this, "menu3", Toast.LENGTH_SHORT).show()
-                R.id.note_payment -> Toast.makeText(this, "menu4", Toast.LENGTH_SHORT).show()
-                R.id.print_receipt -> Toast.makeText(this, "menu5", Toast.LENGTH_SHORT).show()
-                R.id.cancel_payment -> Toast.makeText(this, "menu6", Toast.LENGTH_SHORT).show()
-            }
-            //switch 문 끝나고 drawer 닫기?
-            // drawerLayout.closeDrawer(nav);
-            false
-        } //nav
-
-
+    fun setRecyclerView(){
         //TODO: set RecycleView with Adapter
         items = ArrayList()
         dailyAlarmRecycler = findViewById(R.id.recycler)
@@ -112,25 +180,7 @@ class MainActivity : AppCompatActivity() {
         }else{
             yourAlarmText.isVisible = false
         }
-
-/**
-        // create recyclerView -> need to make it dynamic
-        val items = arrayListOf<DailyAlarmItem>()
-        /*for (i in 0..2){
-            items.add(DailyAlarmItem("School", "07:30","AM" ))
-        }*/
-
-
-        val dailyAlarmRecycler = findViewById<RecyclerView>(R.id.recycler)
-        dailyAlarmRecycler.apply {
-            layoutManager = LinearLayoutManager(context)
-            adapter = DailyAlarmItemAdapter(context, items)
-        }
-**/
-
-    }//onCreate
-
-
+    }
 
 
 
@@ -145,9 +195,6 @@ class MainActivity : AppCompatActivity() {
         addDailyAlarmInfo()
 
     }
-
-
-
 
    /* set Dialog */
     private fun addDailyAlarmInfo(){
@@ -176,7 +223,6 @@ class MainActivity : AppCompatActivity() {
                Toast.makeText(this, context.getString(R.string.alarm_saved) , Toast.LENGTH_SHORT).show()
                dialog.dismiss()
            }
-
        }
        addDialog.setNegativeButton(context.getString(R.string.cancel)){
            dialog, _->
@@ -186,9 +232,13 @@ class MainActivity : AppCompatActivity() {
        addDialog.create()
        addDialog.show()
 
-
        //al OkBtn: Button = addDialog.button
     }
+
+
+
+
+
 
     fun addAlarmPage(view: View) {
         val intent = Intent(this, MainAlarmActivity::class.java)

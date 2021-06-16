@@ -116,7 +116,7 @@
 
 
         <!-- onClick for Navigation menu -->
-        <ImageView
+        <!--<ImageView
             android:id="@+id/menu_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -139,9 +139,24 @@
             android:layout_alignParentRight="true"
             android:layout_marginTop="16dp"
             android:layout_marginRight="10dp"
-            android:layout_marginLeft="4dp"/>
+            android:layout_marginLeft="4dp"/>-->
 
 
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="15dp"/>
+        <ImageView
+            android:id="@+id/hamburger_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_menu"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="20dp"/>
 
 
 
@@ -165,11 +180,18 @@
 
 
 
-    <com.google.android.material.navigation.NavigationView
+    <!--<com.google.android.material.navigation.NavigationView
         android:id="@+id/nav"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:menu="@menu/drawer"/>
+        app:menu="@menu/drawer"/>-->
+
+    <include
+        layout="@layout/left_drawer_menu"
+        android:id="@+id/left_drawer"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_weight="1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/light_grey"
+    android:id="@+id/layout_drawer">
+
+    <ScrollView
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarStyle="insideInset"
+        android:fillViewport="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="@color/background_dark">
+                    <ImageView
+                        android:id="@+id/close_drawer_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_clear"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+
+
+
+
+
+
+                <LinearLayout
+                    android:id="@+id/alarm_menu"
+                    android:weightSum="10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="18dp">
+                    <ImageView
+                        android:layout_weight="1"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_alarm"/>
+                    <TextView
+                        android:layout_weight="5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:fontFamily="@font/nexon_lv1_gothic_low"
+                        android:text="@string/alarm"
+                        android:textColor="@color/background_dark"
+                        android:textSize="20sp"
+                        android:layout_marginRight="100dp"/>
+                    <ImageView
+                        android:layout_weight="4"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#989696"
+                    android:layout_marginBottom="20dp"/>
+
+
+
+
+
+                <LinearLayout
+                    android:id="@+id/clock_menu"
+                    android:weightSum="10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="20dp">
+                    <ImageView
+                        android:layout_weight="1"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_clock"/>
+                    <TextView
+                        android:layout_weight="5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:fontFamily="@font/nexon_lv1_gothic_low"
+                        android:text="@string/clock"
+                        android:textColor="@color/background_dark"
+                        android:textSize="20sp"
+                        android:layout_marginRight="100dp"/>
+                    <ImageView
+                        android:layout_weight="4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#989696"
+                    android:layout_marginBottom="20dp"/>
+
+
+
+
+
+
+                <LinearLayout
+                    android:id="@+id/timer_menu"
+                    android:weightSum="10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="20dp">
+                    <ImageView
+                        android:layout_weight="1"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_timer2"/>
+                    <TextView
+                        android:layout_weight="5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:fontFamily="@font/nexon_lv1_gothic_low"
+                        android:text="@string/timer"
+                        android:textColor="@color/background_dark"
+                        android:textSize="20sp"
+                        android:layout_marginRight="100dp"/>
+                    <ImageView
+                        android:layout_weight="4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#989696"
+                    android:layout_marginBottom="20dp"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/app_off"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:fontFamily="@font/nexon_lv1_gothic_low_otf_bold"
+                android:text="@string/app_off"
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="@drawable/app_off_btn"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"/>
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+
+
+</LinearLayout>

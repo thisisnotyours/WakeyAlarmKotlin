@@ -2,15 +2,16 @@ package com.example.wakeyalarmkotlin.view.view
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.FrameLayout
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.example.wakeyalarmkotlin.R
+import com.example.wakeyalarmkotlin.view.fragment.AlarmFragment
+import com.example.wakeyalarmkotlin.view.fragment.ClockFragment
+import com.example.wakeyalarmkotlin.view.fragment.TimerFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
