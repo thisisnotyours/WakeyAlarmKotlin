@@ -4,8 +4,36 @@
     <string name="alarm_off">Alarm OFF</string>
     <string name="delete_alarm_dialog_title">Delete Alarm</string>
     <string name="delete_alarm_dialog">Do you want to delete this alarm?</string>
-    <string name="cancel">Cancel</string>
+    <string name="delete_alarm_toast">Successfully deleted!</string>
+    <string name="edit">Edit</string>
     <string name="delete">Delete</string>
     <string name="add_new_alarm">Add new alarm</string>
     <string name="toast_alarm_saved">Your Alarm is saved :)</string>
+    <string name="alarm_saved">Alarm saved</string>
+    <string name="save">Save</string>
+    <string name="saved">Saved</string>
+    <string name="set_time">Set your time</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="canceled">Canceled</string>
+
+    <string name="kor">Kor</string>
+    <string name="eng">Eng</string>
+
+    <string name="alarm">Alarm</string>
+    <string name="clock">Clock</string>
+    <string name="timer">Timer</string>
+
+    <string name="alarm_title">Alarm Title</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="mon">M</string>
+    <string name="tue">T</string>
+    <string name="wed">W</string>
+    <string name="thu">T</string>
+    <string name="fri">F</string>
+    <string name="sat">S</string>
+    <string name="sun">S</string>
 </resources>

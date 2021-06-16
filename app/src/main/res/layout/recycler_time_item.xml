@@ -1,61 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center"
     android:layout_weight="1"
     android:weightSum="10"
     android:padding="25dp"
-    android:background="#BAB8BD"
-    android:layout_marginBottom="15dp">
+    android:background="#ffffff"
+    android:backgroundTint="#88ffffff"
+    android:layout_marginBottom="15dp"
+    app:cardCornerRadius="5dp">
 
-    <TextView
-        android:layout_weight="9"
-        android:id="@+id/title_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:text="School"/>
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical"
+       android:paddingTop="16dp"
+       android:paddingBottom="16dp"
+       android:paddingLeft="30dp">
+       <TextView
+           android:id="@+id/title_text"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:fontFamily="@font/nexon_lv1_gothic_low"
+           android:text="School"
+           android:layout_marginLeft="2dp"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <LinearLayout
+       <LinearLayout
+           android:weightSum="2"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal">
+           <LinearLayout
+               android:layout_weight="1"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal">
+               <TextView
+                   android:id="@+id/time_text"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="06:30"
+                   android:textSize="30sp"/>
+               <TextView
+                   android:id="@+id/time_type_text"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="AM"
+                   android:layout_marginLeft="4dp"/>
+           </LinearLayout>
+           <LinearLayout
+               android:layout_weight="1"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:gravity="right"
+               android:orientation="horizontal"
+               android:layout_marginRight="25dp">
+               <TextView
+                   android:id="@+id/date_text"
+                   android:layout_width="wrap_content"
+                   android:layout_height="match_parent"
+                   android:gravity="center_vertical"
+                   android:text="Today"
+                   android:layout_marginRight="8dp"/>
+               <Switch
+                   android:id="@+id/switch_btn"
+                   android:layout_width="wrap_content"
+                   android:layout_height="match_parent"
+                   android:backgroundTintMode="src_over"
+                   android:backgroundTint="#2196F3"
+                   android:gravity="center_vertical" />
+           </LinearLayout>
+
+       </LinearLayout>
+
+       <!-- <TextView
             android:layout_weight="9"
-            android:id="@+id/time_layout"
+            android:id="@+id/title_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_centerInParent="true">
-            <TextView
-                android:id="@+id/time_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="00:00"
-                android:textSize="20sp"/>
-            <TextView
-                android:id="@+id/time_type_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="AM"
-                android:textSize="20sp"
-                android:layout_marginLeft="10dp"/>
-        </LinearLayout>
+            android:layout_gravity="left"
+            android:text="School"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"/>
 
-
-
-        <Switch
-            android:id="@+id/switch_btn"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginRight="20dp"/>
-    </LinearLayout>
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_weight="9"
+                android:id="@+id/time_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_centerInParent="true">
+                <TextView
+                    android:id="@+id/time_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00:00"
+                    android:textColor="#000000"
+                    android:textSize="25sp"/>
+                <TextView
+                    android:id="@+id/time_type_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AM"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"/>
+            </LinearLayout>
 
 
 
-</LinearLayout>
+            <Switch
+                android:id="@+id/switch_btn"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:layout_marginRight="20dp"/>
+        </LinearLayout>-->
+   </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>

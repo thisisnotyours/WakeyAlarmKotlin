@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">알람앱이름!!!</string>
+    <string name="alarm_on">2시간 후 알람</string>
+    <string name="alarm_off">알람 꺼짐</string>
+    <string name="delete_alarm_dialog_title">알람 삭제</string>
+    <string name="delete_alarm_dialog">알람을 삭제 하겠습니까?</string>
+    <string name="delete_alarm_toast">알람 저장 성공!</string>
+    <string name="edit">수정</string>
+    <string name="delete">삭제</string>
+    <string name="add_new_alarm">새로운 알람 만들기</string>
+    <string name="toast_alarm_saved">알람이 저장되었습니다 :)</string>
+    <string name="alarm_saved">알람 저장</string>
+    <string name="save">저장</string>
+    <string name="saved">저장되었습니다</string>
+    <string name="set_time">시간을 정하세요</string>
+    <string name="ok">완료</string>
+    <string name="cancel">취소</string>
+    <string name="canceled">취소되었습니다</string>
+
+    <string name="kor">한국어</string>
+    <string name="eng">영어</string>
+
+    <string name="alarm">알람</string>
+    <string name="clock">시계</string>
+    <string name="timer">타이머</string>
+
+    <string name="alarm_title">알람 제목</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">안녕하세요_ 빈 프래그먼트</string>
+
+    <string name="mon">월</string>
+    <string name="tue">화</string>
+    <string name="wed">수</string>
+    <string name="thu">목</string>
+    <string name="fri">금</string>
+    <string name="sat">토</string>
+    <string name="sun">일</string>
+</resources>

@@ -6,12 +6,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.view.MainActivity">
+    tools:context=".view.view.MainActivity"
+    android:background="@color/background_dark">
+
+
+    <!--android:backgroundTint="#88000000"
+    android:backgroundTintMode="src_over"-->
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#292A2C">
+        android:layout_height="match_parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:onClick="addAlarmPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/peach"
+            android:src="@drawable/ic_add"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="22dp"/>
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -19,11 +35,39 @@
             android:orientation="vertical"
             android:layout_margin="16dp">
             <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+                android:layout_marginTop="60dp">
+                <TextView
+                    android:id="@+id/time_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="50sp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/nexon_lv1_gothic_low"
+                    android:text="10:30"
+                    android:layout_marginLeft="20dp"/>
+                <TextView
+                    android:id="@+id/time_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="30sp"
+                    android:textColor="@color/white"
+                    android:text="AM"
+                    android:fontFamily="@font/nexon_lv1_gothic_low"
+                    android:layout_marginLeft="15dp"/>
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:layout_marginTop="30dp">
+                android:layout_marginTop="10dp">
                 <TextView
                     android:id="@+id/date_text"
                     android:layout_width="wrap_content"
@@ -32,7 +76,8 @@
                     android:textSize="18sp"
                     android:textColor="@color/white"
                     android:text="2020-10-30"
-                    android:fontFamily="@font/nexon_lv1_gothic_low"/>
+                    android:fontFamily="@font/nexon_lv1_gothic_low"
+                    android:layout_marginLeft="10dp"/>
                 <TextView
                     android:id="@+id/day_type"
                     android:layout_width="wrap_content"
@@ -44,43 +89,24 @@
                     android:layout_marginLeft="10dp"
                     android:fontFamily="@font/nexon_lv1_gothic_low"/>
             </LinearLayout>
-            <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-                android:layout_marginTop="15dp">
+
+
             <TextView
-                android:id="@+id/time_text"
+                android:id="@+id/tv_your_alarm"
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:textSize="50sp"
+                android:fontFamily="@font/nexon_lv1_gothic_low_otf_bold"
+                android:text="Your Alarm"
                 android:textColor="@color/white"
-                android:fontFamily="@font/nexon_lv1_gothic_low"
-                android:text="10:30"
-                android:layout_marginLeft="20dp"/>
-            <TextView
-                android:id="@+id/time_type"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:textSize="30sp"
-                android:textColor="@color/white"
-                android:text="AM"
-                android:fontFamily="@font/nexon_lv1_gothic_low"
-                android:layout_marginLeft="15dp"/>
-        </LinearLayout>
-
-
-
+                android:layout_marginTop="50dp"/>
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                android:layout_marginTop="50dp"/>
+                android:layout_marginTop="15dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
         </LinearLayout>
 
 
@@ -97,15 +123,39 @@
             android:src="@drawable/ic_menu"
             android:layout_margin="16dp"/>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:onClick="addAlarm"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:gravity="center_vertical"
+            android:text="@string/kor"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_toLeftOf="@+id/langSwitchBtn"
+            android:layout_marginTop="18dp"/>
+        <Switch
+            android:id="@+id/langSwitchBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="30dp"
-            android:layout_marginBottom="50dp"
-            android:src="@drawable/ic_add"/>
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="4dp"/>
+
+
+
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="175dp"
+            android:layout_marginBottom="22dp"
+            android:onClick="addAlarm"
+            android:backgroundTint="#03A9F4"
+            android:src="@drawable/ic_add" />
 
     </RelativeLayout>
 
