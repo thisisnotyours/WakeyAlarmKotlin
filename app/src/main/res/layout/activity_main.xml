@@ -141,14 +141,25 @@
             android:layout_marginRight="10dp"
             android:layout_marginLeft="4dp"/>-->
 
-
-        <Switch
+        <TextView
+            android:id="@+id/kor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
+            android:gravity="center_vertical"
+            android:text="@string/kor"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="20dp"/>
+        <Switch
+            android:id="@+id/lang_switch_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
-            android:layout_marginLeft="15dp"/>
+            android:layout_toRightOf="@+id/kor"
+            android:layout_marginLeft="2dp"/>
         <ImageView
             android:id="@+id/hamburger_btn"
             android:layout_width="wrap_content"
@@ -156,7 +167,7 @@
             android:layout_alignParentRight="true"
             android:src="@drawable/ic_menu"
             android:layout_marginRight="30dp"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="20dp" />
 
 
 

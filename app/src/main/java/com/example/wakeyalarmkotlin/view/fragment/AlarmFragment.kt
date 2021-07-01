@@ -52,6 +52,8 @@ class AlarmFragment(fragmentAlarm: Int) : Fragment(fragmentAlarm) {
         dateTypeText = rootView.findViewById(R.id.tv_date_type)
 
 
+        //todo: 요일 switch(when)문 으로 바꿔보기
+
         dateText = rootView.findViewById(R.id.tv_date)
         val calendarIcon = rootView.findViewById<ImageView>(R.id.iv_calendar)
         val mon = rootView.findViewById<Button>(R.id.mon)
@@ -87,9 +89,7 @@ class AlarmFragment(fragmentAlarm: Int) : Fragment(fragmentAlarm) {
                             , cal.get(Calendar.MONTH)
                             , cal.get(Calendar.DAY_OF_MONTH)).show()
                 }
-
             }
-
         })
 
 
@@ -107,8 +107,6 @@ class AlarmFragment(fragmentAlarm: Int) : Fragment(fragmentAlarm) {
                 isClicked = true
             }
         }
-
-
         tue.setOnClickListener {
             if (isClicked == true){
                 Log.d("sss","ssssss")
@@ -122,8 +120,6 @@ class AlarmFragment(fragmentAlarm: Int) : Fragment(fragmentAlarm) {
                 isClicked = true
             }
         }
-
-
         wed.setOnClickListener {
             if (isClicked == true){
                 wed.setBackgroundResource(R.drawable.selected_btn_app_color)
@@ -135,8 +131,6 @@ class AlarmFragment(fragmentAlarm: Int) : Fragment(fragmentAlarm) {
                 isClicked = true
             }
         }
-
-
         thu.setOnClickListener {
             if (isClicked == true){
                 thu.setBackgroundResource(R.drawable.selected_btn_app_color)
@@ -148,8 +142,6 @@ class AlarmFragment(fragmentAlarm: Int) : Fragment(fragmentAlarm) {
                 isClicked = true
             }
         }
-
-
         fri.setOnClickListener {
             if (isClicked == true){
                 fri.setBackgroundResource(R.drawable.selected_btn_app_color)
@@ -161,8 +153,6 @@ class AlarmFragment(fragmentAlarm: Int) : Fragment(fragmentAlarm) {
                 isClicked = true
             }
         }
-
-
         sat.setOnClickListener {
             if (isClicked == true){
                 sat.setBackgroundResource(R.drawable.selected_btn_app_color)
@@ -174,8 +164,6 @@ class AlarmFragment(fragmentAlarm: Int) : Fragment(fragmentAlarm) {
                 isClicked = true
             }
         }
-
-
         sun.setOnClickListener {
             if (isClicked == true){
                 sun.setBackgroundResource(R.drawable.selected_btn_app_color_peach)
@@ -192,8 +180,10 @@ class AlarmFragment(fragmentAlarm: Int) : Fragment(fragmentAlarm) {
         cancelBtn.setOnClickListener {
             Toast.makeText(context, "${getString(R.string.canceled)}", Toast.LENGTH_SHORT).show()
             // TODO: do nothing
-            // clear whats saved.
         }
+
+
+
 
 
         saveBtn.setOnClickListener {

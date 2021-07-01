@@ -2,8 +2,10 @@ package com.example.wakeyalarmkotlin.view.view
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.FrameLayout
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -43,7 +45,10 @@ class MainAlarmActivity : AppCompatActivity() {
 
         /* first fragment that user see */
         frameLayout = findViewById(R.id.frame_layout)
-        supportFragmentManager.beginTransaction().replace(R.id.frame_layout, alarmFragment).commit()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.frame_layout, alarmFragment)
+            .commit()
 
 
 
@@ -75,12 +80,9 @@ class MainAlarmActivity : AppCompatActivity() {
 
 
     private fun setUpTabLayout(){
-        alarmFragment = AlarmFragment(R.layout.fragment_alarm)
-        clockFragment = ClockFragment(R.layout.fragment_clock)
-        timerFragment = TimerFragment(R.layout.fragment_timer)
         allTabs?.addTab(allTabs!!.newTab().setText(mContext?.getString(R.string.alarm)), true)
-        allTabs?.addTab(allTabs!!.newTab().setText(mContext?.getString(R.string.clock)), true)
-        allTabs?.addTab(allTabs!!.newTab().setText(mContext?.getString(R.string.timer)), true)
+        allTabs?.addTab(allTabs!!.newTab().setText(mContext?.getString(R.string.clock)), false)
+        allTabs?.addTab(allTabs!!.newTab().setText(mContext?.getString(R.string.timer)), false)
     }
 
 
@@ -97,6 +99,8 @@ class MainAlarmActivity : AppCompatActivity() {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 if (tab != null) {
                     setCurrentTabFragment(tab.position)
+                    Toast.makeText(this@MainAlarmActivity, "click tab-> "+tab, Toast.LENGTH_SHORT).show()
+                    Log.d("tab-> ", tab.toString())
                 }
             }
 
@@ -114,12 +118,6 @@ class MainAlarmActivity : AppCompatActivity() {
         }
     }
 
-    /*private fun setCurrentTabFragment(tabPosition: Int) {
-        when (tabPosition) {
-            0 -> replaceFragment(fragmentOne)
-            1 -> replaceFragment(fragmentTwo)
-        }
-    }*/
 
 
     private fun replaceFragment(fragment: Fragment){

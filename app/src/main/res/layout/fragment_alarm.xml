@@ -338,6 +338,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/cancel"
+            android:textColor="@color/white"
             android:background="@color/dialog"
             android:layout_marginRight="2dp"/>
         <Button
@@ -346,6 +347,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/save"
+            android:textColor="@color/white"
             android:background="@color/app_color"
             android:layout_marginLeft="2dp"/>
     </LinearLayout>

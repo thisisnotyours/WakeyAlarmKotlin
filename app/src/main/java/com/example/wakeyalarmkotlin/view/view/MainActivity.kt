@@ -104,6 +104,20 @@ class MainActivity : AppCompatActivity() {
         timerMenu.setOnClickListener {
             Toast.makeText(this, "타이머 프래그먼트로 이동", Toast.LENGTH_SHORT).show()
         }
+
+        val appOff = findViewById<Button>(R.id.app_off)
+        appOff.setOnClickListener {
+            Toast.makeText(this, "앱 종료", Toast.LENGTH_SHORT).show()
+            val addDialog = AlertDialog.Builder(this, R.style.MyDialogTheme)
+            addDialog.setPositiveButton("OK"){
+                dialog, which ->
+            }
+            addDialog.setNegativeButton("Cancel"){
+                dialog, which ->
+            }
+            addDialog.create()
+
+        }
     }
 
 
