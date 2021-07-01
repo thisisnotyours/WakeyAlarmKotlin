@@ -21,15 +21,15 @@ import java.util.*
 
 
 class MainAlarmActivity : AppCompatActivity() {
-    var allTabs: TabLayout? = null
+    var tabs: TabLayout? = null
     private var mContext: Context? = null
     var bottomNav: BottomNavigationView? = null
     var frameLayout: FrameLayout? = null
     var fragmentStack: Stack<Fragment>? = null
     var fragmentManager: FragmentManager? = null
-    var alarmFragment: AlarmFragment = AlarmFragment(R.layout.fragment_alarm)
-    var clockFragment: ClockFragment = ClockFragment(R.layout.fragment_clock)
-    var timerFragment: TimerFragment = TimerFragment(R.layout.fragment_timer)
+    var alarmFragment: AlarmFragment? = null
+    var clockFragment: ClockFragment? = null
+    var timerFragment: TimerFragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,18 +37,28 @@ class MainAlarmActivity : AppCompatActivity() {
 
         mContext = this
 
-        allTabs = findViewById(R.id.tabs)
-        bindWidgetWithEvent()
-        setUpTabLayout()
 
+        //create fragments objects
+        alarmFragment = AlarmFragment(R.layout.fragment_alarm)
+        clockFragment = ClockFragment(R.layout.fragment_clock)
+        timerFragment = TimerFragment(R.layout.fragment_timer)
 
 
         /* first fragment that user see */
         frameLayout = findViewById(R.id.frame_layout)
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.frame_layout, alarmFragment)
+            .replace(R.id.frame_layout, alarmFragment!!)
             .commit()
+
+
+        tabs = findViewById(R.id.tabs)
+        setUpTabLayout()
+        bindWidgetWithEvent()
+
+
+
+
 
 
 
@@ -80,14 +90,17 @@ class MainAlarmActivity : AppCompatActivity() {
 
 
     private fun setUpTabLayout(){
-        allTabs?.addTab(allTabs!!.newTab().setText(mContext?.getString(R.string.alarm)), true)
-        allTabs?.addTab(allTabs!!.newTab().setText(mContext?.getString(R.string.clock)), false)
-        allTabs?.addTab(allTabs!!.newTab().setText(mContext?.getString(R.string.timer)), false)
+        tabs?.addTab(tabs!!.newTab().setText(mContext?.getString(R.string.alarm)))
+        tabs?.addTab(tabs!!.newTab().setText(mContext?.getString(R.string.clock)))
+        tabs?.addTab(tabs!!.newTab().setText(mContext?.getString(R.string.timer)))
     }
 
 
+
+
+
     private fun bindWidgetWithEvent(){
-        allTabs!!.setOnClickListener(object : OnTabSelectedListener, View.OnClickListener {
+        tabs!!.setOnClickListener(object : OnTabSelectedListener, View.OnClickListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {
                 TODO("Not yet implemented")
             }
@@ -98,10 +111,12 @@ class MainAlarmActivity : AppCompatActivity() {
 
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 if (tab != null) {
+                    Log.d("tabs>","tab is not null, "+tab.position)
                     setCurrentTabFragment(tab.position)
                     Toast.makeText(this@MainAlarmActivity, "click tab-> "+tab, Toast.LENGTH_SHORT).show()
                     Log.d("tab-> ", tab.toString())
                 }
+
             }
 
             override fun onClick(v: View?) {
@@ -112,9 +127,9 @@ class MainAlarmActivity : AppCompatActivity() {
 
     private fun setCurrentTabFragment(tabPosition: Int){
         when (tabPosition){
-            0 -> replaceFragment(alarmFragment)
-            1 -> replaceFragment(clockFragment)
-            2 -> replaceFragment(timerFragment)
+            0 -> alarmFragment?.let { replaceFragment(it) }
+            1 -> clockFragment?.let { replaceFragment(it) }
+            2 -> timerFragment?.let { replaceFragment(it) }
         }
     }
 
