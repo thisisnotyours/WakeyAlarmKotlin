@@ -93,7 +93,7 @@
 
             <TextView
                 android:id="@+id/tv_your_alarm"
-                android:visibility="gone"
+                android:visibility="invisible"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nexon_lv1_gothic_low_otf_bold"

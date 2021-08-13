@@ -190,9 +190,11 @@ class AlarmFragment(fragmentAlarm: Int) : Fragment(fragmentAlarm) {
             Toast.makeText(context, "${getString(R.string.saved)}", Toast.LENGTH_SHORT).show()
             // TODO: save contents
             val intent = Intent(context, MainActivity::class.java)
+            intent.putExtra("yourAlarm", "saveBtnClick");
+            startActivity(intent);
             //send title, time, time type, date
             // or save these data in SQLite
-            startActivity(intent)
+
         }
 
         return rootView

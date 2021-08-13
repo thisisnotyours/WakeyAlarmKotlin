@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.drawerlayout.widget.DrawerLayout.DrawerListener
@@ -48,6 +49,9 @@ class MainActivity : AppCompatActivity() {
 
         //create current date and time
         setCurrentDateAndTime()
+
+        yourAlarmText = findViewById(R.id.tv_your_alarm)
+        yourAlarmText.isInvisible = true
 
         //create RecyclerView
         setRecyclerView()
@@ -186,7 +190,6 @@ class MainActivity : AppCompatActivity() {
         dailyAlarmAdapter = DailyAlarmItemAdapter(this, items)
         dailyAlarmRecycler.layoutManager = LinearLayoutManager(this)
         dailyAlarmRecycler.adapter = dailyAlarmAdapter
-
 
         yourAlarmText = findViewById(R.id.tv_your_alarm)
         if (items.size != null){
