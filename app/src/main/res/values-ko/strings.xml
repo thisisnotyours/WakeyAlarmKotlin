@@ -21,6 +21,9 @@
     <string name="kor">한국어</string>
     <string name="eng">영어</string>
 
+    <string name="your_alarm">나의 알람</string>
+    <string name="today">오늘</string>
+
     <string name="alarm">알람</string>
     <string name="clock">시계</string>
     <string name="timer">타이머</string>

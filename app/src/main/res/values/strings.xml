@@ -20,11 +20,15 @@
     <string name="kor">Kor</string>
     <string name="eng">Eng</string>
 
+    <string name="your_alarm">Your Alarm</string>
+
     <string name="alarm">Alarm</string>
     <string name="clock">Clock</string>
     <string name="timer">Timer</string>
 
     <string name="alarm_title">Alarm Title</string>
+
+    <string name="today">Today</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

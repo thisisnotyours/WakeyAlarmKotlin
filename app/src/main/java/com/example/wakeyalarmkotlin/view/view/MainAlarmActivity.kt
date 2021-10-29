@@ -21,7 +21,7 @@ import java.util.*
 
 
 class MainAlarmActivity : AppCompatActivity() {
-    var tabs: TabLayout? = null
+    var tabLayout: TabLayout? = null
     private var mContext: Context? = null
     var bottomNav: BottomNavigationView? = null
     var frameLayout: FrameLayout? = null
@@ -38,7 +38,7 @@ class MainAlarmActivity : AppCompatActivity() {
         mContext = this
 
 
-        //create fragments objects
+        //create fragments objects  //각 프래그먼트들 객체화
         alarmFragment = AlarmFragment(R.layout.fragment_alarm)
         clockFragment = ClockFragment(R.layout.fragment_clock)
         timerFragment = TimerFragment(R.layout.fragment_timer)
@@ -52,15 +52,13 @@ class MainAlarmActivity : AppCompatActivity() {
             .commit()
 
 
-        tabs = findViewById(R.id.tabs)
-        setUpTabLayout()
+        tabLayout = findViewById(R.id.tablayout)
+        tabLayout?.addTab(tabLayout!!.newTab().setText(mContext?.getString(R.string.alarm)))
+        tabLayout?.addTab(tabLayout!!.newTab().setText(mContext?.getString(R.string.clock)))
+        tabLayout?.addTab(tabLayout!!.newTab().setText(mContext?.getString(R.string.timer)))
+
+
         bindWidgetWithEvent()
-
-
-
-
-
-
 
 /*
         *//* BottomNavigation *//*
@@ -89,20 +87,12 @@ class MainAlarmActivity : AppCompatActivity() {
 
 
 
-    private fun setUpTabLayout(){
-        tabs?.addTab(tabs!!.newTab().setText(mContext?.getString(R.string.alarm)))
-        tabs?.addTab(tabs!!.newTab().setText(mContext?.getString(R.string.clock)))
-        tabs?.addTab(tabs!!.newTab().setText(mContext?.getString(R.string.timer)))
-    }
-
-
-
 
 
     private fun bindWidgetWithEvent(){
-        tabs!!.setOnClickListener(object : OnTabSelectedListener, View.OnClickListener {
+        tabLayout!!.setOnClickListener(object : OnTabSelectedListener, View.OnClickListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {
-                TODO("Not yet implemented")
+
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
@@ -120,7 +110,7 @@ class MainAlarmActivity : AppCompatActivity() {
             }
 
             override fun onClick(v: View?) {
-                TODO("Not yet implemented")
+
             }
         })
     }
